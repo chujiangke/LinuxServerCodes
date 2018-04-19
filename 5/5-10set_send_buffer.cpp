@@ -29,6 +29,8 @@ int main( int argc, char* argv[] )
 
     int sendbuf = atoi( argv[3] );
     int len = sizeof( sendbuf );
+    //reset send receive buffer
+    //min size the tcp send buffer size after setting is 4608
     setsockopt( sock, SOL_SOCKET, SO_SNDBUF, &sendbuf, sizeof( sendbuf ) );
     getsockopt( sock, SOL_SOCKET, SO_SNDBUF, &sendbuf, ( socklen_t* )&len );
     printf( "the tcp send buffer size after setting is %d\n", sendbuf );

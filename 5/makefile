@@ -22,7 +22,12 @@ OBJEXT = obj
 
 all:  \
 	5-1byteorder.exe \
-	5-3testlisten.exe
+	5-3testlisten.exe \
+	5-5testaccept.exe \
+	5-6oobsend.exe \
+	5-7oobrecv.exe \
+	5-9reuse_address.exe \
+	5-10set_send_buffer.exe
 
 clean:
 ifeq ($(notdir $(SHELL)),COMMAND.COM)
@@ -36,6 +41,11 @@ endif
 
 5-1byteorder.exe: 5-1byteorder.cpp
 5-3testlisten.exe: 5-3testlisten.cpp
+5-5testaccept.exe: 5-5testaccept.cpp
+5-6oobsend.exe: 5-6oobsend.cpp
+5-7oobrecv.exe: 5-7oobrecv.cpp
+5-9reuse_address.exe: 5-9reuse_address.cpp
+5-10set_send_buffer.exe: 5-10set_send_buffer.cpp
 
 #UnnamedUnique.$(OBJEXT): UnnamedUnique.cpp
 #Exercise7.exe: CharArray.$(OBJEXT) Exercise7.$(OBJEXT)
