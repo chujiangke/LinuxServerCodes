@@ -21,7 +21,8 @@ OBJEXT = obj
 	$(CPP) $< $(EXEFLAG) $@
 
 all:  \
-	5-1byteorder.exe
+	5-1byteorder.exe \
+	5-3testlisten.exe
 
 clean:
 ifeq ($(notdir $(SHELL)),COMMAND.COM)
@@ -34,7 +35,7 @@ else
 endif
 
 5-1byteorder.exe: 5-1byteorder.cpp
-
+5-3testlisten.exe: 5-3testlisten.cpp
 
 #UnnamedUnique.$(OBJEXT): UnnamedUnique.cpp
 #Exercise7.exe: CharArray.$(OBJEXT) Exercise7.$(OBJEXT)

@@ -38,7 +38,9 @@ int main( int argc, char* argv[] )
 
     int ret = bind( sock, ( struct sockaddr* )&address, sizeof( address ) );
     assert( ret != -1 );
-
+    //通常监听队列是backlog+1大小， 如果超出这个队列大小，服务器新连接状态是s_receive 状态 不返回客户端
+    //ack 建立不了链接
+    //实际测试backlog设置为2的时候o
     ret = listen( sock, backlog );
     assert( ret != -1 );
 
